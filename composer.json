@@ -1,0 +1,38 @@
+{
+    "name": "yansongda/laravel-parsedown",
+    "description": "Convert Markdown To Html With Laravel",
+    "keywords": ["markdown", "html", "laravel", "package"],
+    "support": {
+        "issues": "https://github.com/yansongda/laravel-parsedown/issues",
+        "source": "https://github.com/yansongda/laravel-parsedown"
+    },
+    "authors": [
+        {
+            "name": "yansongda",
+            "email": "me@yansongda.cn"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^5.1",
+        "erusev/parsedown": "~1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yansongda\\LaravelParsedown\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yansongda\\LaravelParsedown\\ParsedownServiceProvider"
+            ],
+            "aliases": {
+                "Parsedown": "Yansongda\\LaravelParsedown\\Facades\\Parsedown"
+            }
+        }
+    },
+    "license": "MIT"
+}
