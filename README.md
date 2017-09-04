@@ -9,7 +9,7 @@
 <a href="https://packagist.org/packages/yansongda/laravel-parsedown"><img src="https://poser.pugx.org/yansongda/laravel-parsedown/license" alt="License"></a>
 </p>
 
-This Package is depends on [erusev/parsedown](https://github.com/erusev/parsedown)  
+This Package depends on [erusev/parsedown](https://github.com/erusev/parsedown)  
 
 ## Installation
 
