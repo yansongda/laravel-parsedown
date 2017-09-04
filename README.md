@@ -9,15 +9,15 @@
 <a href="https://packagist.org/packages/yansongda/laravel-parsedown"><img src="https://poser.pugx.org/yansongda/laravel-parsedown/license" alt="License"></a>
 </p>
 
-本包依赖于 [erusev/parsedown](https://github.com/erusev/parsedown)  
+This Package is depends on [erusev/parsedown](https://github.com/erusev/parsedown)  
 
-## 安装
+## Installation
 
 ```shell
 $ composer require yansongda/laravel-parsedown
 ```
 
-### 添加 service provider
+### Add service provider
 
 ```php
 <?php
@@ -25,7 +25,7 @@ $ composer require yansongda/laravel-parsedown
 Yansongda\LaravelParasedown\ParsedownServiceProvider::class,
 ```
 
-### 添加 alias
+### Add alias
 
 ```php
 <?php
@@ -33,16 +33,22 @@ Yansongda\LaravelParasedown\ParsedownServiceProvider::class,
 'Parsedown' => Yansongda\LaravelParsedown\Facades\Parsedown::class,
 ```
 
-## 使用方法
+### Config(OPTION)
 
-### 使用 blade 语法
+```shell
+$ php artisan vendor:publish --provider="Yansongda\\LaravelParsedown\\ParsedownServiceProvider" --tag=config
+```
+
+## Usage
+
+### Using blade
 ```php
 <?php
 
 @parsedown('## h2');
 ```
 
-### 使用辅助函数
+### Using Helper
 ```php
 <?php
 

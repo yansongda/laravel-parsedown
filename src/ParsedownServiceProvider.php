@@ -24,6 +24,12 @@ class ParsedownServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if (!file_exists(config_path('markdown.php'))) {
+            $this->publishes([
+                dirname(__DIR__) . '/config/markdown.php' => config_path('markdown.php'),
+            ], 'config');
+        }
+
         Blade::directive('parsedown', function ($expression) {
             return "<?php echo parsedown($expression); ?>";
         });
@@ -36,8 +42,12 @@ class ParsedownServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(dirname(__DIR__) . '/config/markdown.php', 'markdown');
+
         $this->app->singleton(Parsedown::class, function ($app) {
-            return new Parsedown();
+            return Parsedown::instance()->setBreaksEnabled(config('markdown.parsedown.breaksEnabled'))
+                                        ->setMarkupEscaped(config('markdown.parsedown.markupEscaped'))
+                                        ->setUrlsLinked(config('markdown.parsedown.urlsLinked'));
         });
 
         $this->app->alias(Parsedown::class, 'parsedown');
