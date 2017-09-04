@@ -30,7 +30,7 @@
                 "Yansongda\\LaravelParsedown\\ParsedownServiceProvider"
             ],
             "aliases": {
-                "Parsedown": "Yansongda\\LaravelParsedown\\Facades\\Parsedown"
+                "LaravelParsedown": "Yansongda\\LaravelParsedown\\Facades\\Parsedown"
             }
         }
     },

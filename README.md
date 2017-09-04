@@ -30,7 +30,7 @@ Yansongda\LaravelParasedown\ParsedownServiceProvider::class,
 ```php
 <?php
 
-'Parsedown' => Yansongda\LaravelParsedown\Facades\Parsedown::class,
+'LaravelParsedown' => Yansongda\LaravelParsedown\Facades\Parsedown::class,
 ```
 
 ### Config(OPTION)
