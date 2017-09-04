@@ -39,6 +39,14 @@ Yansongda\LaravelParasedown\ParsedownServiceProvider::class,
 $ php artisan vendor:publish --provider="Yansongda\\LaravelParsedown\\ParsedownServiceProvider" --tag=config
 ```
 
+|     config    |            desc            |
+| :-----------: | :------------------------: |
+| breaksEnabled | automatic line breaks      |
+| markupEscaped | escapes markup (HTML)      |
+| urlsLinked    | automatic linking of URLs  |
+
+Reference: [erusev/parsedown](https://github.com/erusev/parsedown/wiki/Tutorial:-Get-Started)
+
 ## Usage
 
 ### Using blade
