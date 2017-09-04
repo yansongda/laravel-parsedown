@@ -20,12 +20,16 @@ $ composer require yansongda/laravel-parsedown
 ### 添加 service provider
 
 ```php
+<?php
+
 Yansongda\LaravelParasedown\ParsedownServiceProvider::class,
 ```
 
 ### 添加 alias
 
 ```php
+<?php
+
 'Parsedown' => Yansongda\LaravelParsedown\Facades\Parsedown::class,
 ```
 
@@ -33,11 +37,15 @@ Yansongda\LaravelParasedown\ParsedownServiceProvider::class,
 
 ### 使用 blade 语法
 ```php
+<?php
+
 @parsedown('## h2');
 ```
 
 ### 使用辅助函数
 ```php
+<?php
+
 {{ parsedown('## h2') }}
 ```
 
