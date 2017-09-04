@@ -20,7 +20,7 @@ class ParsedownServiceProvider extends ServiceProvider
      * 
      * @author yansongda <me@yansongda.cn>
      * 
-     * @return  [type]     [description]
+     * @return  void
      */
     public function boot()
     {
