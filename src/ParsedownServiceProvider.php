@@ -17,9 +17,9 @@ class ParsedownServiceProvider extends ServiceProvider
 
     /**
      * boot a service.
-     * 
+     *
      * @author yansongda <me@yansongda.cn>
-     * 
+     *
      * @return  void
      */
     public function boot()

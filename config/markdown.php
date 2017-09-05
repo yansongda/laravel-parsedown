@@ -33,6 +33,8 @@ return [
         // FALSE: '<p>test<br>line break</p>'; => $markdown now contains "test  \nline break"
         'hard_break' => false,
 
-        
+        // atx => # ##
+        // etx => - --
+        'header_style' => 'atx',
     ],
 ];
