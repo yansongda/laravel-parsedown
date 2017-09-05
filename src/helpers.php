@@ -1,12 +1,12 @@
 <?php
 
-if (! function_exists('parsedown')) {
+if (!function_exists('parsedown')) {
     /**
-     * convert markdown to html
+     * convert markdown to html.
      *
      * @author yansongda <me@yansongda.cn>
      *
-     * @param  string $expression
+     * @param string $expression
      *
      * @return string
      */

@@ -2,9 +2,9 @@
 
 namespace Yansongda\LaravelParsedown;
 
-use Parsedown;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Parsedown;
 
 class ParsedownServiceProvider extends ServiceProvider
 {
@@ -20,13 +20,13 @@ class ParsedownServiceProvider extends ServiceProvider
      *
      * @author yansongda <me@yansongda.cn>
      *
-     * @return  void
+     * @return void
      */
     public function boot()
     {
         if (!file_exists(config_path('markdown.php'))) {
             $this->publishes([
-                dirname(__DIR__) . '/config/markdown.php' => config_path('markdown.php'),
+                dirname(__DIR__).'/config/markdown.php' => config_path('markdown.php'),
             ], 'config');
         }
 
@@ -42,7 +42,7 @@ class ParsedownServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(dirname(__DIR__) . '/config/markdown.php', 'markdown');
+        $this->mergeConfigFrom(dirname(__DIR__).'/config/markdown.php', 'markdown');
 
         $this->app->singleton(Parsedown::class, function ($app) {
             return Parsedown::instance()->setBreaksEnabled(config('markdown.parsedown.breaksEnabled'))
