@@ -22,7 +22,7 @@ $ composer require yansongda/laravel-parsedown
 ```php
 <?php
 
-Yansongda\LaravelParasedown\ParsedownServiceProvider::class,
+Yansongda\LaravelParsedown\ParsedownServiceProvider::class,
 ```
 
 ### Add alias
