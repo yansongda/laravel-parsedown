@@ -12,6 +12,6 @@ if (!function_exists('parsedown')) {
      */
     function parsedown($expression)
     {
-        return resolve('parsedown')->text($expression);
+        return app('parsedown')->text($expression);
     }
 }
