@@ -14,7 +14,7 @@ This Package depends on [erusev/parsedown](https://github.com/erusev/parsedown)
 ## Requirement
 
 - composer
-- laravel >= 5.1
+- laravel | lumen >= 5.1
 
 ## Installation
 
@@ -44,11 +44,12 @@ Yansongda\LaravelParsedown\ParsedownServiceProvider::class,
 $ php artisan vendor:publish --provider="Yansongda\\LaravelParsedown\\ParsedownServiceProvider" --tag=laravel-parsedown-config
 ```
 
-|     config    |            desc            |
-| :-----------: | :------------------------: |
-| breaksEnabled | automatic line breaks      |
-| markupEscaped | escapes markup (HTML)      |
-| urlsLinked    | automatic linking of URLs  |
+|     config    |            desc            | default |
+| :-----------: | :------------------------: | :-----: |
+| breaksEnabled | automatic line breaks      | true |
+| markupEscaped | escapes markup (HTML)      | true |
+| urlsLinked    | automatic linking of URLs  | true |
+| safeMode      |  safeMode | false |
 
 Reference: [erusev/parsedown](https://github.com/erusev/parsedown/wiki/Tutorial:-Get-Started)
 
