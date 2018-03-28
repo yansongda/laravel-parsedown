@@ -31,7 +31,7 @@ class ParsedownServiceProvider extends ServiceProvider
                 dirname(__DIR__).'/config/markdown.php' => config_path('markdown.php'),
             ], 'laravel-parsedown-config');
         } elseif ($this->app instanceof LumenApplication) {
-            $this->app->configure('parsedown');
+            $this->app->configure('markdown');
         }
 
         Blade::directive('parsedown', function ($expression) {
