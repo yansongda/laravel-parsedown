@@ -22,12 +22,16 @@ This Package depends on [erusev/parsedown](https://github.com/erusev/parsedown)
 $ composer require yansongda/laravel-parsedown
 ```
 
-### Add service provider(if laravel<5.5)
+### Add service provider(if laravel<5.5 || lumen)
 
 ```php
 <?php
 
 Yansongda\LaravelParsedown\ParsedownServiceProvider::class,
+
+// lumen
+// $app->register(Yansongda\LaravelParsedown\ParsedownServiceProvider::class);
+// $app->withFacades();
 ```
 
 ### Add alias(if laravel<5.5)
@@ -43,6 +47,8 @@ Yansongda\LaravelParsedown\ParsedownServiceProvider::class,
 ```shell
 $ php artisan vendor:publish --provider="Yansongda\\LaravelParsedown\\ParsedownServiceProvider" --tag=laravel-parsedown-config
 ```
+
+**Lumen user please manually copy the configuration file**
 
 |     config    |            desc            | default |
 | :-----------: | :------------------------: | :-----: |
