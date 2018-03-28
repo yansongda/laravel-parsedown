@@ -10,6 +10,9 @@ return [
 
         // enables automatic linking of URLs
         'urlsLinked' => true,
+
+        // safe mode
+        'safeMode' => false,
     ],
 
     'parsehtml' => [

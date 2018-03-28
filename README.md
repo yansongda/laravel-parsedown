@@ -9,7 +9,12 @@
 <a href="https://packagist.org/packages/yansongda/laravel-parsedown"><img src="https://poser.pugx.org/yansongda/laravel-parsedown/license" alt="License"></a>
 </p>
 
-This Package depends on [erusev/parsedown](https://github.com/erusev/parsedown)  
+This Package depends on [erusev/parsedown](https://github.com/erusev/parsedown) 
+
+## Requirement
+
+- composer
+- laravel >= 5.1
 
 ## Installation
 
@@ -17,7 +22,7 @@ This Package depends on [erusev/parsedown](https://github.com/erusev/parsedown)
 $ composer require yansongda/laravel-parsedown
 ```
 
-### Add service provider
+### Add service provider(if laravel<5.5)
 
 ```php
 <?php
@@ -25,7 +30,7 @@ $ composer require yansongda/laravel-parsedown
 Yansongda\LaravelParsedown\ParsedownServiceProvider::class,
 ```
 
-### Add alias
+### Add alias(if laravel<5.5)
 
 ```php
 <?php
@@ -36,7 +41,7 @@ Yansongda\LaravelParsedown\ParsedownServiceProvider::class,
 ### Config(OPTION)
 
 ```shell
-$ php artisan vendor:publish --provider="Yansongda\\LaravelParsedown\\ParsedownServiceProvider" --tag=config
+$ php artisan vendor:publish --provider="Yansongda\\LaravelParsedown\\ParsedownServiceProvider" --tag=laravel-parsedown-config
 ```
 
 |     config    |            desc            |

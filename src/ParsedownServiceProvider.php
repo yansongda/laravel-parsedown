@@ -4,6 +4,8 @@ namespace Yansongda\LaravelParsedown;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\Application as LaravelApplication;
+use Laravel\Lumen\Application as LumenApplication;
 use Parsedown;
 
 class ParsedownServiceProvider extends ServiceProvider
@@ -24,10 +26,12 @@ class ParsedownServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (!file_exists(config_path('markdown.php'))) {
+        if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
             $this->publishes([
                 dirname(__DIR__).'/config/markdown.php' => config_path('markdown.php'),
-            ], 'config');
+            ], 'laravel-parsedown-config');
+        } elseif ($this->app instanceof LumenApplication) {
+            $this->app->configure('parsedown');
         }
 
         Blade::directive('parsedown', function ($expression) {
@@ -45,7 +49,8 @@ class ParsedownServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(dirname(__DIR__).'/config/markdown.php', 'markdown');
 
         $this->app->singleton(Parsedown::class, function ($app) {
-            return Parsedown::instance()->setBreaksEnabled(config('markdown.parsedown.breaksEnabled'))
+            return Parsedown::instance()->setSafeMode(config('markdown.parsedown.safeMode'))
+                                        ->setBreaksEnabled(config('markdown.parsedown.breaksEnabled'))
                                         ->setMarkupEscaped(config('markdown.parsedown.markupEscaped'))
                                         ->setUrlsLinked(config('markdown.parsedown.urlsLinked'));
         });
