@@ -1,4 +1,3 @@
-temp edit to open PR
 <h1 align="center">Laravel-Parsedown</h1>
 
 <p align="center">
