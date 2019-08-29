@@ -13,8 +13,11 @@
         }
     ],
     "require": {
-        "illuminate/support": "^5.1",
+        "illuminate/support": "5.1 - 6.0",
         "erusev/parsedown": "~1.7"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.9.x-dev@dev"
     },
     "autoload": {
         "psr-4": {
@@ -23,6 +26,11 @@
         "files": [
             "src/helpers.php"
         ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Yansongda\\LaravelParsedown\\Tests\\": "tests"
+        }
     },
     "extra": {
         "laravel": {
@@ -34,5 +42,7 @@
             }
         }
     },
-    "license": "MIT"
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

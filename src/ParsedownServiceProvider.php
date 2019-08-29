@@ -26,10 +26,15 @@ class ParsedownServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
-            $this->publishes([
-                dirname(__DIR__).'/config/markdown.php' => config_path('markdown.php'),
-            ], 'laravel-parsedown-config');
+        if ($this->app instanceof LaravelApplication
+            && $this->app->runningInConsole()
+        ) {
+            $this->publishes(
+                [
+                    __DIR__ . '/config/markdown.php' => config_path('markdown.php'),
+                ],
+                'laravel-parsedown-config'
+            );
         } elseif ($this->app instanceof LumenApplication) {
             $this->app->configure('markdown');
         }
@@ -48,11 +53,11 @@ class ParsedownServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(dirname(__DIR__).'/config/markdown.php', 'markdown');
 
-        $this->app->singleton(Parsedown::class, function ($app) {
+        $this->app->singleton(Parsedown::class, function () {
             return Parsedown::instance()->setSafeMode(config('markdown.parsedown.safeMode'))
-                                        ->setBreaksEnabled(config('markdown.parsedown.breaksEnabled'))
-                                        ->setMarkupEscaped(config('markdown.parsedown.markupEscaped'))
-                                        ->setUrlsLinked(config('markdown.parsedown.urlsLinked'));
+                ->setBreaksEnabled(config('markdown.parsedown.breaksEnabled'))
+                ->setMarkupEscaped(config('markdown.parsedown.markupEscaped'))
+                ->setUrlsLinked(config('markdown.parsedown.urlsLinked'));
         });
 
         $this->app->alias(Parsedown::class, 'parsedown');
