@@ -1,4 +1,6 @@
-<?php namespace Yansongda\LaravelParsedown\Tests;
+<?php
+
+namespace Yansongda\LaravelParsedown\Tests;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Yansongda\LaravelParsedown\ParsedownServiceProvider;

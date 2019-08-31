@@ -31,7 +31,7 @@ class ParsedownServiceProvider extends ServiceProvider
         ) {
             $this->publishes(
                 [
-                    __DIR__ . '/config/markdown.php' => config_path('markdown.php'),
+                    __DIR__.'/config/markdown.php' => config_path('markdown.php'),
                 ],
                 'laravel-parsedown-config'
             );

@@ -9,22 +9,22 @@ class ParsedownTest extends TestCase
 {
     public function testHelperWorks()
     {
-        $result = parsedown("# Heading 1");
+        $result = parsedown('# Heading 1');
 
-        $this->assertEquals("<h1>Heading 1</h1>", $result);
+        $this->assertEquals('<h1>Heading 1</h1>', $result);
     }
 
     public function testFacadeWorks()
     {
-        $result = Parsedown::text("# Heading 1");
+        $result = Parsedown::text('# Heading 1');
 
-        $this->assertEquals("<h1>Heading 1</h1>", $result);
+        $this->assertEquals('<h1>Heading 1</h1>', $result);
     }
 
     public function testSingletonWorks()
     {
-        $result = app("parsedown")->text("# Heading 1");
+        $result = app('parsedown')->text('# Heading 1');
 
-        $this->assertEquals("<h1>Heading 1</h1>", $result);
+        $this->assertEquals('<h1>Heading 1</h1>', $result);
     }
 }
